@@ -640,6 +640,25 @@
             .testimonials-section h2 { font-size: 1.8rem; }
         }
     </style>
+
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1889056241733478');
+    fbq('track', 'PageView');
+    fbq('track', 'ViewContent');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1889056241733478&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
 </head>
 <body>
 
@@ -811,7 +830,7 @@
                 </div>
                 
                 <!-- Botón CTA con enlace Checkout -->
-                <a href="https://pay.hotmart.com/W105175942H?off=rymbbnoa" class="cta-button" target="_blank" rel="noopener noreferrer">
+                <a href="https://pay.hotmart.com/Y105618481D" class="cta-button" target="_blank" rel="noopener noreferrer">
                     ¡SÍ! COMIENZA A CREAR AHORA
                 </a>
             </div>
@@ -843,9 +862,28 @@
     <footer>
         <p>&copy; 2026 Escultura Profesional. Todos los derechos reservados.</p>
         <div class="footer-links" style="margin-top: 15px;">
-            <a href="https://go.hotmart.com/W105175942H?dp=1" target="_blank">Términos de servicio / Referencia</a>
+            <a href="https://go.hotmart.com/Y105618481D?dp=1" target="_blank">Términos de servicio / Referencia</a>
         </div>
     </footer>
 
+    <!-- Script Integración SRC Hotmart -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var urlParams = new URLSearchParams(window.location.search);
+            var srcParam = urlParams.get('src');
+            
+            if (srcParam) {
+                var links = document.querySelectorAll("a[href*='hotmart.com']");
+                links.forEach(function(link) {
+                    var href = link.getAttribute('href');
+                    if (href.indexOf('?') !== -1) {
+                        link.setAttribute('href', href + '&src=' + encodeURIComponent(srcParam));
+                    } else {
+                        link.setAttribute('href', href + '?src=' + encodeURIComponent(srcParam));
+                    }
+                });
+            }
+        });
+    </script>
 </body>
 </html>
