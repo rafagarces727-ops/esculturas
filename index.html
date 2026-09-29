@@ -1,9 +1,14 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Domina la Escultura Profesional desde Cero</title>
+    <meta name="description" content="El paso a paso exacto para crear esculturas de nivel exposición con porcelana fría, desde cero. Curso en video + bonos exclusivos.">
+    <meta property="og:title" content="Escultura desde Cero a Nivel Exposición">
+    <meta property="og:description" content="El paso a paso exacto para crear esculturas de nivel exposición con porcelana fría, desde cero. Curso en video + bonos exclusivos.">
+    <meta property="og:image" content="https://d1yei2z3i6k35z.cloudfront.net/17190722/69e7b7470df6c1.61929321_Creaturas-monstruosa.jpg">
+    <meta property="og:type" content="website">
     <!-- Modern Tech Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
     <style>
@@ -12,9 +17,8 @@
             --bg-color: #000000;
             --text-main: #ffffff;
             --text-muted: #a0a0a0;
-            --accent-cian: #ccff00; /* As requested, a bright lime/cyan mix */
-            --accent-pink: #ff00ff;
-            --accent-blue: #00ffff; /* True cyan for secondary accents */
+            --accent-cian: #ccff00; /* Color dominante: lima/cian */
+            --accent-pink: #ff00ff; /* Único acento secundario */
             --danger-red: #ff3333;
             --border-glow-cian: 0 0 10px var(--accent-cian), 0 0 20px var(--accent-cian), inset 0 0 15px rgba(204, 255, 0, 0.2);
             --border-glow-pink: 0 0 10px var(--accent-pink), 0 0 20px var(--accent-pink), inset 0 0 15px rgba(255, 0, 255, 0.2);
@@ -54,7 +58,7 @@
             font-weight: 800;
             font-size: 0.9rem;
             letter-spacing: 1px;
-            animation: pulse-red 2s infinite;
+            animation: pulse-red 3s ease-in-out 5;
             position: sticky;
             top: 0;
             z-index: 100;
@@ -110,10 +114,8 @@
             border-radius: 0;
             box-shadow: none;
             margin-bottom: 60px;
-            background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.9)), url('fondo-hero-placeholder.jpg'); /* REEMPLAZA ESTA IMAGEN */
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
+            /* Sin foto de fondo real todavía: fallback 100% CSS. Si luego tienes una foto, reemplaza este background por: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.9)), url('tu-foto.jpg') center/cover; */
+            background: radial-gradient(circle at 20% 20%, rgba(255,0,255,0.14) 0%, transparent 45%), radial-gradient(circle at 80% 80%, rgba(204,255,0,0.12) 0%, transparent 45%), #000000;
             overflow: hidden;
         }
 
@@ -137,11 +139,15 @@
         }
 
         .hero h1 {
-            font-size: 2.8rem;
+            font-family: 'Inter', sans-serif;
+            text-transform: none;
+            font-size: 2.6rem;
+            font-weight: 800;
             color: var(--text-main);
             margin-bottom: 20px;
             text-shadow: 0 0 10px rgba(255, 255, 255, 0.3), 0 0 20px var(--accent-cian);
-            line-height: 1.2;
+            line-height: 1.25;
+            letter-spacing: -0.5px;
         }
 
         .hero p {
@@ -166,6 +172,22 @@
             background: #111;
         }
 
+        .video-wrapper::before {
+            content: '▶ Cargando vista previa...';
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+            color: var(--accent-pink);
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            opacity: 0.6;
+        }
+
         .video-wrapper iframe, .video-wrapper video {
             position: absolute;
             top: 0;
@@ -173,6 +195,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+            z-index: 1;
         }
 
         .scroll-indicator {
@@ -180,7 +203,7 @@
             font-size: 0.9rem;
             text-transform: uppercase;
             letter-spacing: 2px;
-            color: var(--accent-blue);
+            color: var(--accent-cian);
             animation: bounce 2s infinite;
             opacity: 0.8;
             position: relative;
@@ -249,9 +272,9 @@
 
         .image-container {
             width: 100%;
-            border: 1px solid rgba(0, 255, 255, 0.4);
+            border: 1px solid rgba(204, 255, 0, 0.4);
             border-radius: 15px;
-            box-shadow: 0 0 15px var(--accent-blue), inset 0 0 20px rgba(0, 255, 255, 0.2);
+            box-shadow: 0 0 15px var(--accent-cian), inset 0 0 20px rgba(204, 255, 0, 0.2);
             position: relative;
             overflow: hidden;
             background-color: #0a0a0a;
@@ -264,7 +287,7 @@
         }
 
         .image-container:hover {
-            box-shadow: 0 0 25px var(--accent-blue), inset 0 0 30px rgba(0, 255, 255, 0.3);
+            box-shadow: 0 0 25px var(--accent-cian), inset 0 0 30px rgba(204, 255, 0, 0.3);
             transform: scale(1.02);
         }
 
@@ -272,7 +295,7 @@
             content: 'TU FOTO AQUÍ';
             position: absolute;
             font-family: 'Orbitron', sans-serif;
-            color: var(--accent-blue);
+            color: var(--accent-cian);
             opacity: 0.3;
             font-size: 1.5rem;
             letter-spacing: 2px;
@@ -490,12 +513,12 @@
             text-align: center;
             font-size: 2rem;
             margin-bottom: 50px;
-            color: var(--accent-blue);
+            color: var(--accent-pink);
         }
 
         .faq-item {
             background: rgba(20, 20, 20, 0.5);
-            border: 1px solid rgba(0, 255, 255, 0.2);
+            border: 1px solid rgba(255, 0, 255, 0.2);
             border-radius: 10px;
             margin-bottom: 20px;
             padding: 25px;
@@ -503,7 +526,7 @@
         }
 
         .faq-item:hover {
-            border-color: var(--accent-blue);
+            border-color: var(--accent-pink);
             background: rgba(30, 30, 30, 0.8);
         }
 
@@ -539,13 +562,13 @@
         }
 
         .footer-links a {
-            color: var(--accent-blue);
+            color: var(--accent-cian);
             margin: 0 10px;
         }
 
         .footer-links a:hover {
             text-decoration: underline;
-            text-shadow: 0 0 5px var(--accent-blue);
+            text-shadow: 0 0 5px var(--accent-cian);
         }
 
         /* 7. Testimonios */
@@ -605,10 +628,30 @@
 
         .testimonial-author {
             display: flex;
-            flex-direction: column;
+            align-items: center;
+            gap: 12px;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             padding-top: 15px;
             margin-top: auto;
+        }
+
+        .testimonial-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 900;
+            color: black;
+            font-size: 1.1rem;
+        }
+
+        .testimonial-details {
+            display: flex;
+            flex-direction: column;
         }
 
         .testimonial-name {
@@ -628,6 +671,353 @@
             gap: 5px;
         }
 
+        /* Bonus Stack */
+        .bonus-list {
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .bonus-item {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(204, 255, 0, 0.25);
+            border-radius: 10px;
+            padding: 18px 20px;
+        }
+
+        .bonus-item.secret {
+            border-color: rgba(255, 0, 255, 0.4);
+            background: rgba(255, 0, 255, 0.05);
+        }
+
+        .bonus-title {
+            font-family: 'Inter', sans-serif;
+            font-weight: 800;
+            font-size: 1rem;
+            color: var(--text-main);
+            margin-bottom: 6px;
+        }
+
+        .bonus-desc {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 8px;
+        }
+
+        .bonus-price {
+            color: var(--accent-cian);
+            font-size: 0.85rem;
+            font-weight: 700;
+        }
+
+        .lifetime-note {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            font-style: italic;
+            margin-bottom: 25px;
+        }
+
+        .countdown-timer {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 3rem;
+            font-weight: 900;
+            color: var(--danger-red);
+            text-shadow: 0 0 15px var(--danger-red);
+            margin-bottom: 15px;
+            letter-spacing: 3px;
+        }
+
+        .countdown-label {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--danger-red);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+
+        .guarantee-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 20px;
+            padding: 8px 18px;
+            border: 1px solid var(--accent-cian);
+            border-radius: 30px;
+            color: var(--accent-cian);
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .scarcity-note {
+            margin-top: 15px;
+            color: var(--danger-red);
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        /* Sección Creador */
+        .creator-section {
+            padding: 60px 0;
+        }
+
+        .creator-box {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(20,20,20,0.8);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 20px;
+            padding: 40px;
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .creator-photo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--accent-cian);
+            box-shadow: 0 0 15px rgba(204,255,0,0.4);
+            flex-shrink: 0;
+        }
+
+        .creator-avatar-placeholder {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 2px solid var(--accent-cian);
+            box-shadow: 0 0 15px rgba(204,255,0,0.4);
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 900;
+            font-size: 2.5rem;
+            color: black;
+            background: linear-gradient(135deg, var(--accent-cian), var(--accent-pink));
+        }
+
+        .creator-info {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .creator-tag {
+            color: var(--accent-pink);
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        .creator-name {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.4rem;
+            margin-bottom: 12px;
+            color: var(--text-main);
+        }
+
+        .creator-text {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 10px;
+        }
+
+        /* Contadores de prueba social */
+        .stats-row {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            max-width: 600px;
+            margin: 0 auto 50px;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 900;
+            color: var(--text-main);
+        }
+
+        .stat-label {
+            color: var(--accent-pink);
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 700;
+        }
+
+        /* Resumen */
+        .recap-section {
+            padding: 60px 0;
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .recap-section h2 {
+            font-size: 1.8rem;
+            color: var(--accent-pink);
+            margin-bottom: 20px;
+        }
+
+        .recap-section p {
+            color: var(--text-muted);
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1rem;
+        }
+
+        /* Urgencia Final */
+        .final-cta-section {
+            padding: 80px 0 100px;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .final-cta-section h2 {
+            font-size: 1.8rem;
+            color: var(--text-main);
+            margin-bottom: 20px;
+        }
+
+        .countdown-final {
+            margin-bottom: 30px;
+        }
+
+        .final-cta-section .cta-button {
+            margin: 0 auto;
+        }
+
+        /* Aparición al hacer scroll */
+        .reveal {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Placeholders para material pendiente (foto/captura real) */
+        .pending-placeholder {
+            border: 2px dashed rgba(204, 255, 0, 0.4);
+            border-radius: 15px;
+            padding: 40px 20px;
+            text-align: center;
+            background: rgba(204, 255, 0, 0.03);
+        }
+
+        .pending-placeholder .pending-label {
+            font-family: 'Orbitron', sans-serif;
+            color: var(--accent-cian);
+            font-size: 1rem;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        .pending-placeholder .pending-hint {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        /* Antes / Después */
+        .before-after-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .before-after-grid .pending-placeholder {
+            padding: 30px 15px;
+            min-height: 220px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        @media (max-width: 600px) {
+            .before-after-grid { grid-template-columns: 1fr; }
+        }
+
+        .before-after-grid .image-container img {
+            height: 100%;
+            object-position: center 20%;
+        }
+
+        .before-after-tag {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            z-index: 3;
+            background: var(--accent-cian);
+            color: black;
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 900;
+            font-size: 0.75rem;
+            letter-spacing: 1px;
+            padding: 4px 12px;
+            border-radius: 20px;
+        }
+
+        /* CTA fijo para móvil */
+        .mobile-sticky-cta {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .mobile-sticky-cta {
+                display: flex;
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                z-index: 90;
+                padding: 12px 16px calc(12px + env(safe-area-inset-bottom));
+                background: rgba(0, 0, 0, 0.92);
+                backdrop-filter: blur(8px);
+                border-top: 1px solid rgba(204, 255, 0, 0.4);
+                box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.5);
+            }
+
+            .mobile-sticky-cta a {
+                display: block;
+                width: 100%;
+                text-align: center;
+                background: var(--accent-cian);
+                color: black;
+                font-family: 'Orbitron', sans-serif;
+                font-weight: 900;
+                font-size: 1rem;
+                letter-spacing: 1px;
+                text-transform: uppercase;
+                padding: 14px 10px;
+                border-radius: 8px;
+            }
+
+            /* Deja espacio para que el CTA fijo no tape el último contenido */
+            body {
+                padding-bottom: 70px;
+            }
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             .hero h1 { font-size: 2rem; }
@@ -638,6 +1028,10 @@
             .cta-button { font-size: 1.2rem; padding: 15px 20px; }
             .image-container { min-height: 250px; }
             .testimonials-section h2 { font-size: 1.8rem; }
+            .creator-box { flex-direction: column; text-align: center; padding: 30px 20px; }
+            .stats-row { gap: 10px; }
+            .stat-number { font-size: 1.6rem; }
+            .countdown-timer { font-size: 2.2rem; }
         }
     </style>
 
@@ -665,6 +1059,13 @@
     <!-- 1. Banner de Urgencia -->
     <div class="urgency-banner">
         ⚠️ ALERTA: EL DESCUENTO Y LOS BONOS DESAPARECEN PRONTO ⚠️
+    </div>
+
+    <!-- CTA fijo para móvil -->
+    <div class="mobile-sticky-cta">
+        <a href="https://pay.hotmart.com/Y105618481D?checkoutMode=10" target="_blank" rel="noopener noreferrer">
+            🎨 Comenzar ahora — $6.99
+        </a>
     </div>
 
     <!-- Header con Logotipo -->
@@ -703,29 +1104,44 @@
         <section class="problem-section">
             <h2>La cruda realidad de intentar esculpir personajes que destaquen.</h2>
             <div class="problem-list">
-                <div class="problem-item">
+                <div class="problem-item reveal">
                     <div class="problem-title">Frustración por malas proporciones:</div>
                     <div class="problem-desc">Pasas horas modelando, pero al final la postura se ve rígida o las extremidades simplemente no encajan. Esa falta de bases anatómicas sólidas arruina todo el trabajo visual de tu personaje y te hace dudar de tu talento.</div>
                 </div>
-                <div class="problem-item">
+                <div class="problem-item reveal">
                     <div class="problem-title">Mito de los materiales inalcanzables:</div>
                     <div class="problem-desc">Sientes que necesitas herramientas importadas, arcillas premium y equipos costosos para empezar. El miedo a desperdiciar dinero en materiales equivocados te paraliza antes de dar el primer paso.</div>
                 </div>
-                <div class="problem-item">
+                <div class="problem-item reveal">
                     <div class="problem-title">Acabado "amateur":</div>
                     <div class="problem-desc">Logras una estructura base increíble, pero al momento de los detalles finales, las texturas y el pulido te traicionan. Tu pieza no se ve lista para una exposición o para la venta, sino como un simple experimento inconcluso.</div>
                 </div>
-                <div class="problem-item">
+                <div class="problem-item reveal">
                     <div class="problem-title">Cursos carísimos:</div>
                     <div class="problem-desc">Las escuelas tradicionales y los cursos caros de internet te cobran cientos o miles de dólares por técnicas de taller que deberían ser accesibles para cualquier artista comprometido.</div>
                 </div>
-                <div class="problem-item">
+                <div class="problem-item reveal">
                     <div class="problem-title">Mucha teoría, cero práctica:</div>
                     <div class="problem-desc">Te llenan la cabeza con conceptos abstractos. Sin embargo, cuando te sientas frente a la mesa de trabajo, sigues sin saber por dónde empezar la estructura de tu figura.</div>
                 </div>
-                <div class="problem-item">
+                <div class="problem-item reveal">
                     <div class="problem-title">Demasiados módulos, nada al grano:</div>
                     <div class="problem-desc">Pierdes semanas viendo videos de relleno, en lugar de aprender el paso a paso exacto y aplicable para ver resultados tangibles desde el día uno.</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Antes / Después -->
+        <section class="image-showcase">
+            <h3 class="section-label">Así de real es la transformación</h3>
+            <div class="before-after-grid">
+                <div class="image-container reveal" style="margin-bottom: 0; aspect-ratio: 3/4;">
+                    <div class="before-after-tag">ANTES</div>
+                    <img src="https://d1yei2z3i6k35z.cloudfront.net/17190722/6ab709005cf248.44945594_image-1790380216164.webp" alt="Escultura sin terminar, en proceso base">
+                </div>
+                <div class="image-container reveal" style="margin-bottom: 0; aspect-ratio: 3/4; border-color: var(--accent-pink); box-shadow: var(--border-glow-pink);">
+                    <div class="before-after-tag" style="background: var(--accent-pink); color: black;">DESPUÉS</div>
+                    <img src="https://d1yei2z3i6k35z.cloudfront.net/17190722/6ab708f04a2978.78312642_image-1790380247146.webp" alt="Escultura terminada de nivel exposición, con detalles y pintura final">
                 </div>
             </div>
         </section>
@@ -735,7 +1151,7 @@
             <h3 class="section-label">Fácil y completamente posible</h3>
             <div class="image-container" style="max-width: 400px; margin: 0 auto; aspect-ratio: 3 / 4; border-color: var(--accent-pink); box-shadow: var(--border-glow-pink); margin-bottom: 0;">
                 <video autoplay loop muted playsinline style="width: 100%; height: 100%; object-fit: cover; position: relative; z-index: 2;">
-                    <source src="https://d1yei2z3i6k35z.cloudfront.net/17190722/69e7b83f1326b1.74583965_minivideo2.mp4" type="video/mp4">
+                    <source src="minivideo2_comprimido.mp4" type="video/mp4">
                 </video>
             </div>
         </section>
@@ -743,22 +1159,22 @@
         <!-- 4. Beneficios -->
         <section class="benefits-section">
             <div class="benefits-grid">
-                <div class="benefit-card">
+                <div class="benefit-card reveal">
                     <div class="benefit-icon">🎨</div>
                     <div class="benefit-title">Diseño de criaturas, fantasía y realismo</div>
                     <div class="benefit-text">Logra texturas impactantes y acabados asombrosos que dejarán a todos sin palabras.</div>
                 </div>
-                <div class="benefit-card">
+                <div class="benefit-card reveal">
                     <div class="benefit-icon">💎</div>
                     <div class="benefit-title">Estructuras Sólidas</div>
                     <div class="benefit-text">Aprende a construir armazones robustos e inteligentes que nunca colapsarán.</div>
                 </div>
-                <div class="benefit-card">
+                <div class="benefit-card reveal">
                     <div class="benefit-icon">⚡</div>
                     <div class="benefit-title">Dominio del Volumen</div>
                     <div class="benefit-text">Entiende cómo se comportan las masas en el espacio tridimensional con precisión total.</div>
                 </div>
-                <div class="benefit-card">
+                <div class="benefit-card reveal">
                     <div class="benefit-icon">🛠️</div>
                     <div class="benefit-title">Materiales Baratos</div>
                     <div class="benefit-text">Técnicas avanzadas aplicadas con insumos accesibles probados en el mundo real.</div>
@@ -768,7 +1184,7 @@
 
         <!-- Sección de Imágenes: Detalle de la Obra -->
         <section class="image-showcase">
-            <h3 class="section-label" style="color: var(--accent-blue);">Resultados del curso</h3>
+            <h3 class="section-label">Resultados del curso</h3>
             <div class="gallery-grid">
                 <div class="image-container" style="margin-bottom: 0;">
                     <img src="https://d1yei2z3i6k35z.cloudfront.net/17190722/69e7b7470df6c1.61929321_Creaturas-monstruosa.jpg" alt="Resultado Monstruoso">
@@ -779,61 +1195,145 @@
                 <div class="image-container" style="margin-bottom: 0;">
                     <img src="https://d1yei2z3i6k35z.cloudfront.net/17190722/69e7b717cbc056.12125670_Sirena.jpg" alt="Resultado Sirena">
                 </div>
+                <div class="image-container" style="margin-bottom: 0;">
+                    <img src="https://d1yei2z3i6k35z.cloudfront.net/17190722/6ab71708208ab1.18129375_WhatsAppImage2026-09-25at7.44.15PM1.jpeg" alt="Resultado Casa Araña">
+                </div>
+            </div>
+        </section>
+
+        <!-- Prueba de que el curso es real -->
+        <section class="image-showcase">
+            <h3 class="section-label">Lo que vas a encontrar adentro</h3>
+            <div class="pending-placeholder reveal" style="max-width: 700px; margin: 0 auto;">
+                <div class="pending-label">🖥️ CAPTURA DEL ÁREA DE MIEMBROS</div>
+                <div class="pending-hint">Reemplaza este bloque con una captura de pantalla real del listado de módulos o del reproductor de video del curso. Esto es clave para generar confianza en una compra de bajo costo: le demuestra al visitante que el curso existe de verdad.</div>
             </div>
         </section>
 
         <!-- Sección de Testimonios -->
         <section class="testimonials-section">
+            <div class="stats-row">
+                <div class="reveal">
+                    <div class="stat-number">500+</div>
+                    <div class="stat-label">Alumnos</div>
+                </div>
+                <div class="reveal">
+                    <div class="stat-number">4.8/5</div>
+                    <div class="stat-label">Satisfacción</div>
+                </div>
+                <div class="reveal">
+                    <div class="stat-number">7 Días</div>
+                    <div class="stat-label">Garantía</div>
+                </div>
+            </div>
             <h2>LO QUE DICEN NUESTROS ESTUDIANTES</h2>
             <div class="testimonials-grid">
                 
-                <div class="testimonial-card">
+                <div class="testimonial-card reveal">
                     <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
                     <div class="testimonial-text">"Nunca había tocado la porcelana fria en mi vida y pensaba que los materiales me costarían una fortuna. Ver el proceso en video paso a paso me dio la confianza para empezar. Hoy terminé mi primera criatura gastando poquísimo dinero."</div>
                     <div class="testimonial-author">
-                        <span class="testimonial-name">Carlos M.</span>
-                        <span class="testimonial-tag">Estudiante Verificado 🟢</span>
+                        <div class="testimonial-avatar" style="background: linear-gradient(135deg, var(--accent-cian), #7a9900);">C</div>
+                        <div class="testimonial-details">
+                            <span class="testimonial-name">Carlos M.</span>
+                            <span class="testimonial-tag">Estudiante Verificado 🟢</span>
+                        </div>
                     </div>
                 </div>
 
-                <div class="testimonial-card">
+                <div class="testimonial-card reveal">
                     <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
                     <div class="testimonial-text">"Llevaba meses frustrada porque mis esculturas siempre colapsaban o quedaban desproporcionadas. El módulo donde explica los volúmenes de la anatomía me voló la cabeza. Ahora mis personajes se sostienen solos y tienen un nivel de detalle que parece de exposición."</div>
                     <div class="testimonial-author">
-                        <span class="testimonial-name">Laura Gómez</span>
-                        <span class="testimonial-tag">Artista Independiente 🟢</span>
+                        <div class="testimonial-avatar" style="background: linear-gradient(135deg, var(--accent-pink), #7a0077);">L</div>
+                        <div class="testimonial-details">
+                            <span class="testimonial-name">Laura Gómez</span>
+                            <span class="testimonial-tag">Artista Independiente 🟢</span>
+                        </div>
                     </div>
                 </div>
 
-                <div class="testimonial-card">
+                <div class="testimonial-card reveal">
                     <div class="testimonial-stars">⭐⭐⭐⭐</div>
                     <div class="testimonial-text">"El curso es realmente increíble y la calidad de las explicaciones superó por completo mis expectativas. Honestamente, el precio es muy bajo para todo el valor y las técnicas que enseña paso a paso. Le doy 4 estrellas únicamente porque me encantaría que en el futuro agregaran un módulo extra donde enseñen a hacer moldes para reproducir las esculturas. Aún así, lo recomiendo a ojos cerrados, es una herramienta indispensable."</div>
                     <div class="testimonial-author">
-                        <span class="testimonial-name">David T.</span>
-                        <span class="testimonial-tag">Artista Plástico 🟢</span>
+                        <div class="testimonial-avatar" style="background: linear-gradient(135deg, var(--accent-cian), var(--accent-pink));">D</div>
+                        <div class="testimonial-details">
+                            <span class="testimonial-name">David T.</span>
+                            <span class="testimonial-tag">Artista Plástico 🟢</span>
+                        </div>
                     </div>
                 </div>
 
             </div>
         </section>
 
+        <!-- Sección de Autoridad / Creador -->
+        <section class="creator-section">
+            <div class="creator-box reveal">
+                <!-- Foto real ✓. Pendiente: nombre, bio y cifra de alumnos siguen siendo de muestra, reemplázalos por los reales -->
+                <img class="creator-photo" style="object-position: center 25%;" src="https://d1yei2z3i6k35z.cloudfront.net/17190722/6ab715b7102ac3.96678601_WhatsAppImage2026-09-25at7.44.15PM.jpeg" alt="Escultura sostenida en la mano del creador del curso">
+                <div class="creator-info">
+                    <div class="creator-tag">¡Hola! Mucho gusto</div>
+                    <h3 class="creator-name">Soy Alejandro Ruiz, escultor y creador de este método</h3>
+                    <p class="creator-text">Llevo más de 6 años esculpiendo criaturas y personajes con porcelana fría. Empecé sin saber nada de anatomía, arruinando piezas por proporciones mal calculadas y materiales que no sabía usar. Después de años de prueba y error, ordené todo ese conocimiento en un método claro para que nadie más tenga que perder el tiempo que yo perdí.</p>
+                    <p class="creator-text">✅ Resultados comprobados: más de <strong style="color:var(--text-main)">500 artistas</strong> ya crearon su primera pieza de exposición con este método.</p>
+                </div>
+            </div>
+        </section>
+
         <!-- 5. Oferta Irresistible -->
         <section class="offer-section">
-            <div class="offer-box">
+            <div class="offer-box reveal">
                 <h2 class="offer-title">Oferta Irresistible</h2>
                 <div class="offer-includes">
-                    Curso en Video completo
+                    Curso en Video Completo + Kit de Referencias Exclusivas y Order Bump
                 </div>
+
+                <div class="bonus-list">
+                    <div class="bonus-item">
+                        <div class="bonus-title">🎁 BONO 1 — Guía de Proporciones y Anatomía Aplicada</div>
+                        <div class="bonus-desc">Aprende a calcular las medidas correctas, los ejes de equilibrio y la estructura ósea antes de moldear o dibujar cualquier personaje. Ideal para acabar con las proporciones rígidas para siempre.</div>
+                        <div class="bonus-price">Valor real: <span style="text-decoration: line-through; opacity: 0.6;">$12.00</span> Incluido GRATIS hoy</div>
+                    </div>
+                    <div class="bonus-item">
+                        <div class="bonus-title">🎁 BONO 2 — Guía Avanzada de Texturizado y Acabado Profesional</div>
+                        <div class="bonus-desc">Técnicas detalladas paso a paso para dar texturas limpias, pulido realista y acabados de nivel de exhibición a tus piezas sin importar el material que uses.</div>
+                        <div class="bonus-price">Valor real: <span style="text-decoration: line-through; opacity: 0.6;">$15.00</span> Incluido GRATIS hoy</div>
+                    </div>
+                    <div class="bonus-item secret">
+                        <div class="bonus-title">🔒 BONO SECRETO</div>
+                        <div class="bonus-desc">Reservado solo para quienes acceden hoy desde esta página. No está anunciado públicamente y lo descubrirás de inmediato al entrar al curso.</div>
+                        <div class="bonus-price">Valor real: <span style="text-decoration: line-through; opacity: 0.6;">$14.00</span> Incluido GRATIS hoy</div>
+                    </div>
+                </div>
+
+                <p class="lifetime-note">✨ Actualizaciones de por vida incluidas, sin pagar un centavo más.</p>
+
+                <div class="countdown-label">Esta oferta desaparece en:</div>
+                <div class="countdown-timer" id="countdown">14:40</div>
+
                 <div class="price-container">
                     <span class="price-old">$78.00 USD</span>
-                    <span class="price-new">$6,99 USD</span>
+                    <span class="price-new">$6.99 USD</span>
                 </div>
-                
+
                 <!-- Botón CTA con enlace Checkout -->
                 <a href="https://pay.hotmart.com/Y105618481D?checkoutMode=10" class="cta-button" target="_blank" rel="noopener noreferrer">
                     ¡SÍ! COMIENZA A CREAR AHORA
                 </a>
+
+                <div>
+                    <span class="guarantee-badge">🛡️ 7 Días de Garantía</span>
+                </div>
+                <p class="scarcity-note">⚠️ Precio válido solo para las primeras plazas de hoy</p>
             </div>
+        </section>
+
+        <!-- Resumen -->
+        <section class="recap-section">
+            <h2 class="reveal">¿No leíste todo? Te lo resumo</h2>
+            <p class="reveal">Si quieres dejar de improvisar con proporciones y materiales, y aprender el paso a paso exacto para crear esculturas de nivel exposición, este curso te da el método completo —con bonos incluidos— por una fracción de lo que cuesta cualquier taller presencial. Pago único, sin mensualidades, con 7 días de garantía. <strong style="color:var(--text-main)">Riesgo $0.</strong></p>
         </section>
 
         <!-- 6. FAQ -->
@@ -854,6 +1354,25 @@
                 <div class="faq-question">¿Hay alguna garantía?</div>
                 <div class="faq-answer">Sí, tienes 7 días de garantía incondicional respaldada directamente por la plataforma de Hotmart.</div>
             </div>
+
+            <div class="faq-item">
+                <div class="faq-question">¿El pago es único o es una mensualidad?</div>
+                <div class="faq-answer">Es un pago único, no mensual. Compras una vez y el acceso al curso y sus actualizaciones es tuyo para siempre.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">¿Cómo recibo mi acceso después de pagar?</div>
+                <div class="faq-answer">Inmediatamente después de que se apruebe tu pago, recibirás en tu correo electrónico todos los datos de acceso al curso.</div>
+            </div>
+        </section>
+
+        <!-- 7. Urgencia Final -->
+        <section class="final-cta-section">
+            <h2 class="reveal">Esta oferta desaparece en:</h2>
+            <div class="countdown-timer countdown-final reveal" id="countdown-final">14:40</div>
+            <a href="https://pay.hotmart.com/Y105618481D?checkoutMode=10" class="cta-button reveal" target="_blank" rel="noopener noreferrer">
+                COMPRAR AHORA
+            </a>
         </section>
 
     </div>
@@ -864,6 +1383,7 @@
         <div class="footer-links" style="margin-top: 15px;">
             <a href="https://pay.hotmart.com/Y105618481D?checkoutMode=10" target="_blank">Términos de servicio / Referencia</a>
         </div>
+        <p style="margin-top: 15px; max-width: 500px; margin-left: auto; margin-right: auto; font-size: 0.75rem; opacity: 0.7;">Este sitio no forma parte del sitio web de Facebook o Facebook Inc. Además, este sitio NO está respaldado por Facebook de ninguna manera. FACEBOOK es una marca comercial de FACEBOOK, Inc.</p>
     </footer>
 
     <!-- Script Integración SRC Hotmart -->
@@ -871,7 +1391,7 @@
         document.addEventListener("DOMContentLoaded", function() {
             var urlParams = new URLSearchParams(window.location.search);
             var srcParam = urlParams.get('src');
-            
+
             if (srcParam) {
                 var links = document.querySelectorAll("a[href*='hotmart.com']");
                 links.forEach(function(link) {
@@ -882,6 +1402,50 @@
                         link.setAttribute('href', href + '?src=' + encodeURIComponent(srcParam));
                     }
                 });
+            }
+
+            // Countdown de urgencia: plazo real por visitante (se guarda en su navegador),
+            // no un loop falso que se reinicia solo para simular urgencia infinita.
+            var countdownEls = document.querySelectorAll('.countdown-timer');
+            if (countdownEls.length) {
+                var DURATION_MS = (14 * 60 + 40) * 1000;
+                var deadline;
+                try {
+                    var stored = localStorage.getItem('escultura_deadline');
+                    deadline = stored ? parseInt(stored, 10) : null;
+                    if (!deadline) {
+                        deadline = Date.now() + DURATION_MS;
+                        localStorage.setItem('escultura_deadline', String(deadline));
+                    }
+                } catch (e) {
+                    deadline = Date.now() + DURATION_MS;
+                }
+
+                var tick = function() {
+                    var timeLeft = Math.max(0, Math.round((deadline - Date.now()) / 1000));
+                    var m = String(Math.floor(timeLeft / 60)).padStart(2, '0');
+                    var s = String(timeLeft % 60).padStart(2, '0');
+                    countdownEls.forEach(function(el) { el.textContent = m + ':' + s; });
+                    if (timeLeft <= 0) clearInterval(timerId);
+                };
+                tick();
+                var timerId = setInterval(tick, 1000);
+            }
+
+            // Animación de aparición al hacer scroll
+            var revealEls = document.querySelectorAll('.reveal');
+            if ('IntersectionObserver' in window && revealEls.length) {
+                var observer = new IntersectionObserver(function(entries) {
+                    entries.forEach(function(entry) {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('active');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.15 });
+                revealEls.forEach(function(el) { observer.observe(el); });
+            } else {
+                revealEls.forEach(function(el) { el.classList.add('active'); });
             }
         });
     </script>
